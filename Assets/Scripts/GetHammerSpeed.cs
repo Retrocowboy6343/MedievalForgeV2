@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GetHammerSpeed : MonoBehaviour
 {
-
-    // variables
-    
-    private Rigidbody rb;
+    //Variables
+    [SerializeField] private Rigidbody rb;
     public float hammerYVelocity;
+
     void Update()
     {
+        //Set hammerYVelocity to the Y velocity of the hammer
         hammerYVelocity = rb.velocity.y;
     }
 }

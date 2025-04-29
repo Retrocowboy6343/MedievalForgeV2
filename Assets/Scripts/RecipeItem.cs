@@ -1,43 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class RecipeItem : MonoBehaviour
+public class RecipeItem: MonoBehaviour
 {
-    //variables
+    //Variables
+    public GameObject recipeOutput;
     public GameObject smithingOutput;
-    private bool canSmith;
-    private bool onAnvil;
-    public GetHammerSpeed getHammerSpeed;
+    public bool recipeOnAnvil;
 
-    private void Update()
-    {
-        if (getHammerSpeed.hammerYVelocity >= 20 && onAnvil)
-            canSmith = true;
-    }
-    //smithing conditions
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Anvil"))
-            onAnvil = true;
+        //Check if Parent Object is on the Anvil Pedistal
+        if (other.gameObject.CompareTag("AnvilPedistal"))
+        {
+            recipeOnAnvil = true;
+        }
     }
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Anvil"))
-            onAnvil = false;
+        //Check if Parent Object leaves the Anvil Pedistal
+        if (other.gameObject.CompareTag("AnvilPedistal"))
+        {
+            recipeOnAnvil = false;
+        }
     }
-    private void OnCollisionEnter(Collision other)
-    {
-        
-        if (other.gameObject.CompareTag("Hammer") && canSmith)
-            WhenSmithed();
-    }
-
-    private void WhenSmithed()
-    {
-        GameObject newInstance = Instantiate(smithingOutput, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
-   
 }
