@@ -6,6 +6,8 @@ using UnityEngine;
 public class SmithableItem : MonoBehaviour
 {
     //Variables
+    [SerializeField] private int smeltingTime;
+    private bool isWorkable;
     private bool canSmith;
     private bool onAnvil;
     public float requiredHammerVelocity = 20;
@@ -13,10 +15,11 @@ public class SmithableItem : MonoBehaviour
     public GetHammerSpeed getHammerSpeed;
     public RecipeItem getRecipe;
     
+    //Functions
     private void Update()
     {
         //Detect if Both Parent Object and Recipe are in the correct places
-        if (onAnvil && getRecipe.recipeOnAnvil)
+        if (onAnvil && getRecipe.recipeOnAnvil && isWorkable)
             canSmith = true;
     }
     //Smithing conditions
@@ -25,12 +28,20 @@ public class SmithableItem : MonoBehaviour
         //Check if Parent Object is on Anvil
         if (other.gameObject.CompareTag("Anvil"))
             onAnvil = true;
+        if (other.gameObject.CompareTag("BrickOven"))
+        {
+            StartCoroutine(WhenSmelted());
+        }
     }
     private void OnTriggerExit(Collider other) 
     {
         //Check if Parent Object leaves Anvil
         if (other.gameObject.CompareTag("Anvil"))
             onAnvil = false;
+        if (other.gameObject.CompareTag("BrickOven") && !isWorkable)
+        {
+            StopCoroutine(WhenSmelted());
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -45,5 +56,20 @@ public class SmithableItem : MonoBehaviour
         Destroy(gameObject);
         //Destroy Parent Object
         Debug.Log("Success!");
+    }
+    private IEnumerator WhenSmelted()
+    {
+        yield return new WaitForSeconds(smeltingTime);
+        isWorkable = true;
+    }
+    private IEnumerator IngotAutoCooldown()
+    {
+        yield return new WaitForSeconds(20);
+        isWorkable = false;
+    }
+    private void WhenQuenched()
+    {
+        StopCoroutine(IngotAutoCooldown());
+        isWorkable = false;
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Meteor
   - Hammer
+  - Anvil
+  - AnvilPedistal
   layers:
   - Default
   - TransparentFX
