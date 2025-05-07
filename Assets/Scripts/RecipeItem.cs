@@ -5,7 +5,6 @@ using UnityEngine;
 public class RecipeItem: MonoBehaviour
 {
     //Variables
-    public GameObject recipeOutput;
     public GameObject smithingOutput;
     public bool recipeOnAnvil;
 
