@@ -11,6 +11,6 @@ public class GetHammerSpeed : MonoBehaviour
     void Update()
     {
         //Set hammerYVelocity to the Y velocity of the hammer
-        hammerYVelocity = rb.velocity.y;
+        hammerYVelocity = rb.linearVelocity.y;
     }
 }
