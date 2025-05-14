@@ -13,13 +13,13 @@ public class SmithableItem : MonoBehaviour
     public float requiredHammerVelocity = 20;
     //External Script references
     public GetHammerSpeed getHammerSpeed;
-    public RecipeItem getRecipe;
+    public FindRecipe findRecipe;
     
     //Functions
     private void Update()
     {
         //Detect if Both Parent Object and Recipe are in the correct places
-        if (onAnvil && getRecipe.recipeOnAnvil && isWorkable)
+        if (onAnvil && findRecipe.recipeOnAnvil && isWorkable)
             canSmith = true;
     }
     //Smithing conditions
@@ -38,6 +38,7 @@ public class SmithableItem : MonoBehaviour
         //Check if Parent Object leaves Anvil
         if (other.gameObject.CompareTag("Anvil"))
             onAnvil = false;
+        //If object is pulled out of Oven before smelting is done, stop WhenSmelted();
         if (other.gameObject.CompareTag("BrickOven") && !isWorkable)
         {
             StopCoroutine(WhenSmelted());
@@ -52,7 +53,7 @@ public class SmithableItem : MonoBehaviour
     private void WhenSmithed()
     {
         //Spawn new Prefab Instance of the recipe's output
-        GameObject newInstance = Instantiate(getRecipe.smithingOutput, transform.position, Quaternion.identity);
+        GameObject newInstance = Instantiate(findRecipe.curentRecipe, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //Destroy Parent Object
         Debug.Log("Success!");
