@@ -6,7 +6,7 @@ public class GetHammerSpeed : MonoBehaviour
 {
     //Variables
     [SerializeField] private Rigidbody rb;
-    public float hammerYVelocity;
+    [HideInInspector] public float hammerYVelocity;
 
     void Update()
     {
