@@ -17,9 +17,7 @@ public class FindRecipe : MonoBehaviour
             {
                 recipeOnAnvil = false;
                 return;
-                
             }
-                
             //If smithingOutput isn't null, set currentRecipe to the smithingOutput variable and set recipeOnAnvil to true
             if (other.GetComponent<RecipeItem>().smithingOutput != null)
             {
@@ -28,10 +26,12 @@ public class FindRecipe : MonoBehaviour
             }
         }
     }
+    //If recipe leaves the trigger, set currentRecipe to null and set recipeOnAnvil to false
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Recipe"))
         {
+
             curentRecipe = null;
             recipeOnAnvil = false;
         }
