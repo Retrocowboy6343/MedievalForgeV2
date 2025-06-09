@@ -226,10 +226,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158133058118229587, guid: 987faeb5545373041a98f13c1196576a,
+        type: 3}
+      propertyPath: m_text
+      value: Longsword
+      objectReference: {fileID: 0}
     - target: {fileID: 7237599946452524475, guid: 987faeb5545373041a98f13c1196576a,
         type: 3}
       propertyPath: m_Name
-      value: Recipe (Blank)
+      value: Recipe (Longsword)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

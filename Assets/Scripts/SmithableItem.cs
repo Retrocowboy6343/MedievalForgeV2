@@ -47,10 +47,11 @@ public class SmithableItem : MonoBehaviour
     }
     private void WhenSmithed()
     {
-        //Spawn new Prefab Instance of the recipe's output
-        GameObject newInstance = Instantiate(findRecipe.curentRecipe, transform.position, Quaternion.identity);
+        canSmith = false;
+        //Spawn new Prefab Instance of the recipe's output and destroy parent
         Destroy(gameObject);
-        //Destroy Parent Object
+        GameObject newInstance = Instantiate(findRecipe.curentRecipe, transform.position, Quaternion.identity);
+        
         Debug.Log("Success!");
     }
 }    
