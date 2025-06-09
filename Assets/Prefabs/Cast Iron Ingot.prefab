@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 7311347572865847217}
   - component: {fileID: 5760396294148339799}
   - component: {fileID: 833546627610065047}
+  - component: {fileID: 5042041875913077704}
   m_Layer: 0
   m_Name: Cast Iron Ingot
   m_TagString: Untagged
@@ -278,7 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0ad5121d2f97142b8168816a9e7ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smeltingTime: 0
   requiredHammerVelocity: 20
   getHammerSpeed: {fileID: 0}
   findRecipe: {fileID: 0}
@@ -331,3 +331,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5042041875913077704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465521694857884149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949e19937d2203b428fad114ac7cd6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,8 +6,6 @@ using UnityEngine;
 public class SmithableItem : MonoBehaviour
 {
     //Variables
-    [SerializeField] private int smeltingTime;
-    private bool isWorkable;
     private bool canSmith;
     private bool onAnvil;
     public float requiredHammerVelocity = 0;
@@ -22,9 +20,7 @@ public class SmithableItem : MonoBehaviour
         if (onAnvil && findRecipe.recipeOnAnvil)
         {
             canSmith = true;
-            Debug.Log("penis");
-        }
-            
+        }    
     }
     //Smithing conditions
     private void OnTriggerEnter(Collider other)
@@ -51,7 +47,5 @@ public class SmithableItem : MonoBehaviour
         //Spawn new Prefab Instance of the recipe's output and destroy parent
         Destroy(gameObject);
         GameObject newInstance = Instantiate(findRecipe.curentRecipe, transform.position, Quaternion.identity);
-        
-        Debug.Log("Success!");
     }
 }    
