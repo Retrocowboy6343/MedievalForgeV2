@@ -8,6 +8,7 @@ TagManager:
   - Hammer
   - Anvil
   - AnvilPedistal
+  - Recipe
   layers:
   - Default
   - TransparentFX

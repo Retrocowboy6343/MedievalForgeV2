@@ -10,17 +10,21 @@ public class SmithableItem : MonoBehaviour
     private bool isWorkable;
     private bool canSmith;
     private bool onAnvil;
-    public float requiredHammerVelocity = 20;
+    public float requiredHammerVelocity = 0;
     //External Script references
     public GetHammerSpeed getHammerSpeed;
     public FindRecipe findRecipe;
-    
+
     //Functions
     private void Update()
     {
         //Detect if Both Parent Object and Recipe are in the correct places
-        if (onAnvil && findRecipe.recipeOnAnvil && isWorkable)
+        if (onAnvil && findRecipe.recipeOnAnvil)
+        {
             canSmith = true;
+            Debug.Log("penis");
+        }
+            
     }
     //Smithing conditions
     private void OnTriggerEnter(Collider other)
@@ -28,26 +32,17 @@ public class SmithableItem : MonoBehaviour
         //Check if Parent Object is on Anvil
         if (other.gameObject.CompareTag("Anvil"))
             onAnvil = true;
-        if (other.gameObject.CompareTag("BrickOven"))
-        {
-            StartCoroutine(WhenSmelted());
-        }
     }
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
         //Check if Parent Object leaves Anvil
         if (other.gameObject.CompareTag("Anvil"))
             onAnvil = false;
-        //If object is pulled out of Oven before smelting is done, stop WhenSmelted();
-        if (other.gameObject.CompareTag("BrickOven") && !isWorkable)
-        {
-            StopCoroutine(WhenSmelted());
-        }
     }
     private void OnCollisionEnter(Collision other)
     {
         //If all smithing conditions are met, run WhenSmithed()
-        if (other.gameObject.CompareTag("Hammer") && getHammerSpeed.hammerYVelocity >= requiredHammerVelocity && canSmith)
+        if (other.gameObject.CompareTag("Hammer") && canSmith)
             WhenSmithed();
     }
     private void WhenSmithed()
@@ -58,19 +53,4 @@ public class SmithableItem : MonoBehaviour
         //Destroy Parent Object
         Debug.Log("Success!");
     }
-    private IEnumerator WhenSmelted()
-    {
-        yield return new WaitForSeconds(smeltingTime);
-        isWorkable = true;
-    }
-    private IEnumerator IngotAutoCooldown()
-    {
-        yield return new WaitForSeconds(20);
-        isWorkable = false;
-    }
-    private void WhenQuenched()
-    {
-        StopCoroutine(IngotAutoCooldown());
-        isWorkable = false;
-    }
-}
+}    

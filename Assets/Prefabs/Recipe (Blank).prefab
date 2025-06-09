@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 8722342784458900682}
   m_Layer: 0
   m_Name: Recipe (Blank)
-  m_TagString: Untagged
+  m_TagString: Recipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
