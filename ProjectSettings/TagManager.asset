@@ -9,6 +9,7 @@ TagManager:
   - Anvil
   - AnvilPedistal
   - Recipe
+  - Hand
   layers:
   - Default
   - TransparentFX
