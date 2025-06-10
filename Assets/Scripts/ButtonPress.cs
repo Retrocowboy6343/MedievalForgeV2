@@ -5,11 +5,8 @@ public class ButtonPress : MonoBehaviour
     //variables
     [SerializeField] GameObject spawnedObject;
     public Transform spawnTransform;
-    private void OnTriggerEnter(Collider other)
+    public void WhenButtonPressed()
     {
-        if (other.gameObject.CompareTag("Hand"))
-        {
-            Instantiate(spawnedObject, spawnTransform);
-        }
+        Instantiate(spawnedObject, spawnTransform);
     }
 }

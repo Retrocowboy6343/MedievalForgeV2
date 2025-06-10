@@ -20,6 +20,7 @@ public class SmithableItem : MonoBehaviour
         if (onAnvil && findRecipe.recipeOnAnvil)
         {
             canSmith = true;
+            Debug.Log("penis");
         }    
     }
     //Smithing conditions
@@ -27,7 +28,11 @@ public class SmithableItem : MonoBehaviour
     {
         //Check if Parent Object is on Anvil
         if (other.gameObject.CompareTag("Anvil"))
+        {
             onAnvil = true;
+            Debug.Log("Penis once more");
+        }
+            
     }
     private void OnTriggerExit(Collider other)
     {
