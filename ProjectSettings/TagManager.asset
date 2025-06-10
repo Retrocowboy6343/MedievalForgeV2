@@ -10,6 +10,8 @@ TagManager:
   - AnvilPedistal
   - Recipe
   - Hand
+  - Furnace
+  - QBucket
   layers:
   - Default
   - TransparentFX

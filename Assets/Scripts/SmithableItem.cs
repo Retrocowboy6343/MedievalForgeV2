@@ -11,17 +11,24 @@ public class SmithableItem : MonoBehaviour
     public float requiredHammerVelocity = 0;
     //External Script references
     public GetHammerSpeed getHammerSpeed;
+    public GameObject findpedestal;
     public FindRecipe findRecipe;
+    public SmeltableItem smeltableItem;
 
     //Functions
     private void Update()
     {
         //Detect if Both Parent Object and Recipe are in the correct places
-        if (onAnvil && findRecipe.recipeOnAnvil)
+        if (onAnvil && findRecipe.recipeOnAnvil && smeltableItem.isWorkable)
         {
             canSmith = true;
             Debug.Log("penis");
         }    
+    }
+    private void Start()
+    {
+        findRecipe = FindFirstObjectByType<FindRecipe>();
+        smeltableItem = GetComponent<SmeltableItem>();
     }
     //Smithing conditions
     private void OnTriggerEnter(Collider other)

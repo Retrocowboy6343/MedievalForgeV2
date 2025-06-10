@@ -282,8 +282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredHammerVelocity: 20
   getHammerSpeed: {fileID: 0}
+  findpedestal: {fileID: 0}
   findRecipe: {fileID: 726491055695178263, guid: 66b231e5d76cf16458aab04554f8062b,
     type: 3}
+  smeltableItem: {fileID: 0}
 --- !u!64 &5760396294148339799
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -345,7 +347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949e19937d2203b428fad114ac7cd6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSmelt: 0
+  smeltingTime: 5
+  cooldownTime: 5
+  isWorkable: 0
+  coolMaterial: {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
+  hotMaterial: {fileID: 2100000, guid: 829df249786c4d646a7993268969dbb8, type: 2}
 --- !u!114 &4127114392364014130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +426,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
