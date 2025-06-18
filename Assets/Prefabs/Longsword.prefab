@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 460349339077701709}
   - component: {fileID: 1173249867641771521}
   - component: {fileID: 4907649557674144787}
+  - component: {fileID: 7048426539723405749}
   m_Layer: 0
   m_Name: Longsword
   m_TagString: Untagged
@@ -70,8 +71,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4900736561228783361, guid: 57f427618beb9364e899e595869aa22e, type: 3}
-  - {fileID: -1139501467303870122, guid: 57f427618beb9364e899e595869aa22e, type: 3}
+  - {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
+  - {fileID: 2100000, guid: 6be8052f193d7304488978ebe37f805c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -284,6 +285,21 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &7048426539723405749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078567579265235033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28adae9e73000f5419447d69ee0edca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolMaterial: {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
+  hotMaterial: {fileID: 2100000, guid: 829df249786c4d646a7993268969dbb8, type: 2}
+  cooldownTime: 5
 --- !u!1 &7111192610024726020
 GameObject:
   m_ObjectHideFlags: 0
