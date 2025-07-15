@@ -2325,6 +2325,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5042041875913077704, guid: df7860ca4c2ce0041a3992b09d234e43,
+        type: 3}
+      propertyPath: isWorkable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6465521694857884149, guid: df7860ca4c2ce0041a3992b09d234e43,
         type: 3}
       propertyPath: m_Name
@@ -2343,17 +2348,17 @@ PrefabInstance:
     - target: {fileID: 7257202791198572963, guid: df7860ca4c2ce0041a3992b09d234e43,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0218894
+      value: -2.108
       objectReference: {fileID: 0}
     - target: {fileID: 7257202791198572963, guid: df7860ca4c2ce0041a3992b09d234e43,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5246463
+      value: 1.525
       objectReference: {fileID: 0}
     - target: {fileID: 7257202791198572963, guid: df7860ca4c2ce0041a3992b09d234e43,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.27685
+      value: -7.882
       objectReference: {fileID: 0}
     - target: {fileID: 7257202791198572963, guid: df7860ca4c2ce0041a3992b09d234e43,
         type: 3}
@@ -2767,17 +2772,17 @@ PrefabInstance:
     - target: {fileID: 5918553151232756258, guid: 84670eccf52ce254889eb04cee57dc25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.50718635
+      value: -2.089
       objectReference: {fileID: 0}
     - target: {fileID: 5918553151232756258, guid: 84670eccf52ce254889eb04cee57dc25,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2956463
+      value: 1.296
       objectReference: {fileID: 0}
     - target: {fileID: 5918553151232756258, guid: 84670eccf52ce254889eb04cee57dc25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.21685
+      value: -5.255
       objectReference: {fileID: 0}
     - target: {fileID: 5918553151232756258, guid: 84670eccf52ce254889eb04cee57dc25,
         type: 3}
@@ -3296,6 +3301,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2115180967}
     m_Modifications:
+    - target: {fileID: 1465907616243146753, guid: 1262f3d08a6c4a648a8c765b3517e06f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Anvil
+      objectReference: {fileID: 0}
     - target: {fileID: 6653938535919180714, guid: 1262f3d08a6c4a648a8c765b3517e06f,
         type: 3}
       propertyPath: m_Name

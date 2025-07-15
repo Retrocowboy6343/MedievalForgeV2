@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smeltingTime: 5
-  cooldownTime: 5
+  cooldownTime: 25
   isWorkable: 0
   coolMaterial: {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
   hotMaterial: {fileID: 2100000, guid: 829df249786c4d646a7993268969dbb8, type: 2}

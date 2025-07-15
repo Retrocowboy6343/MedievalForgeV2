@@ -6,7 +6,7 @@ public class SmeltableItem : MonoBehaviour
 {
     //variables
     [SerializeField] private int smeltingTime;
-    [SerializeField] private int cooldownTime;
+    [SerializeField] private int cooldownTime = 25;
     public bool isWorkable;
     private bool canSmelt;
     public Material coolMaterial;
@@ -62,10 +62,10 @@ public class SmeltableItem : MonoBehaviour
             StartCoroutine(SmeltTimer());
             StopCoroutine(CooldownTimer());
         }
-        if (other.gameObject.CompareTag("QBucket"))
+        //if (other.gameObject.CompareTag("QBucket"))
         {
-            StopAllCoroutines();
-            OnCooldown();
+            //StopAllCoroutines();
+            //OnCooldown();
         }
     }
     private void OnTriggerExit(Collider other)

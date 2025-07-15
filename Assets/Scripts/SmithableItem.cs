@@ -33,6 +33,7 @@ public class SmithableItem : MonoBehaviour
     //Smithing conditions
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("wiggers");
         //Check if Parent Object is on Anvil
         if (other.gameObject.CompareTag("Anvil"))
         {

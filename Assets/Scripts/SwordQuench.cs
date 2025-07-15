@@ -18,16 +18,20 @@ public class SwordQuench : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {       
+    private void Start()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
         OnObjectSpawn();
         isCool = false;
+        Debug.Log("Object Spawned correctly yes");
+
     }   
 
     void OnObjectSpawn()
     {
         CooldownTimer();
         meshRenderer.materials[0] = hotMaterial;
+        Debug.Log(meshRenderer.materials[0]);
     }
     
     IEnumerator CooldownTimer()
@@ -42,7 +46,7 @@ public class SwordQuench : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Qbucket"))
+        if (other.gameObject.CompareTag("QBucket"))
         {
             OnCooldown();
         }
