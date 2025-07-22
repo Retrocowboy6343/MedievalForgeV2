@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd0083968b1b73408b7e91477ae67dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smithingOutput: {fileID: 4078567579265235033, guid: 323411727abd61b45b6a292955be3fc7,
+  smithingOutput: {fileID: 3687777853103301222, guid: 45168dfc3c6dd2b479779437e6a34d00,
     type: 3}

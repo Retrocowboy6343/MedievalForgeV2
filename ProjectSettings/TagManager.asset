@@ -12,6 +12,7 @@ TagManager:
   - Hand
   - Furnace
   - QBucket
+  - Blade
   layers:
   - Default
   - TransparentFX
