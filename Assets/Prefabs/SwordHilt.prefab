@@ -298,6 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiltAttachpoint: {fileID: 5762983833189523596}
+  dettachVelocity: 5
+  getHammerSpeed: {fileID: 0}
 --- !u!1 &6616185610455599547
 GameObject:
   m_ObjectHideFlags: 0
