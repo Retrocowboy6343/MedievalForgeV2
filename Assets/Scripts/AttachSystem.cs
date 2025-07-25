@@ -7,26 +7,30 @@ public class AttachSystem : MonoBehaviour
     public Transform hiltAttachpoint;
     public int dettachVelocity;
     public GetHammerSpeed getHammerSpeed;
+    bool hasAttachment;
+    SwordQuench swordQuench;
 
 
 
     private void Start()
     {
         getHammerSpeed = FindFirstObjectByType<GetHammerSpeed>();
+        hasAttachment = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Blade"))
+        if (other.gameObject.CompareTag("Blade") && !hasAttachment && swordQuench.isCool)
         {
-            //other.GetComponent<XRGrabInteractable>().enabled = false;
+            other.GetComponent<XRGrabInteractable>().enabled = false;
             //other.GetComponent<Rigidbody>().Sleep();
             other.GetComponent<Rigidbody>().isKinematic = true;
-            other.GetComponent<BoxCollider>().enabled = false;
+            
             //other.GetComponent<XRBaseGrabTransformer>().enabled = false;
             other.gameObject.transform.position = hiltAttachpoint.position;
             other.gameObject.transform.parent = transform;
             other.gameObject.transform.localEulerAngles = new Vector3(90, 0, 0);
+            hasAttachment = true;
         }
         if (other.gameObject.CompareTag("Hammer") && getHammerSpeed.hammerYVelocity > dettachVelocity)
         {
