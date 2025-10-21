@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
@@ -39,6 +40,7 @@ public class AttachSystem : MonoBehaviour
                 other.gameObject.transform.parent = transform;
                 other.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
                 hasAttachment = true;
+                gameObject.transform.localRotation = Quaternion.identity;
             }
         }
         //CODE DOESNT WORK CURRENTLY
