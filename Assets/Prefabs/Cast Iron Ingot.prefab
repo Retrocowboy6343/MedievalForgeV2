@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
+  - {fileID: 2100000, guid: ca8687349afdfe148bf607eed14ae789, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,10 +348,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smeltingTime: 5
-  cooldownTime: 5
+  cooldownTime: 25
   isWorkable: 0
-  coolMaterial: {fileID: 2100000, guid: 3841e2ecd00310e44b003a7210efc571, type: 2}
-  hotMaterial: {fileID: 2100000, guid: 829df249786c4d646a7993268969dbb8, type: 2}
+  coolMaterial: {fileID: 2100000, guid: ca8687349afdfe148bf607eed14ae789, type: 2}
+  hotMaterial: {fileID: 2100000, guid: b10b17006cae17f469dd5fd7ab2cd4a2, type: 2}
 --- !u!114 &4127114392364014130
 MonoBehaviour:
   m_ObjectHideFlags: 0

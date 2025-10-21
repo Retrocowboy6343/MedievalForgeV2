@@ -15,6 +15,7 @@ public class SmeltableItem : MonoBehaviour
 
     private void Start()
     {
+        //set variables
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = coolMaterial;
         isWorkable = false;
@@ -27,15 +28,17 @@ public class SmeltableItem : MonoBehaviour
             StopCoroutine(SmeltTimer());
         }
     }
-
+    //IEnumerators which wait for a specified amount of time before running a method
     IEnumerator SmeltTimer()
     {
+        //wait {smeltingTime} then activate OnSmelt();
         yield return new WaitForSeconds(smeltingTime);
         OnSmelt();
-        Debug.Log("yeah");
+        
     }
     IEnumerator CooldownTimer()
     {
+        //wait {smeltingTime} then activate Cooldown();
         yield return new WaitForSeconds(cooldownTime);
         OnCooldown();
     }
@@ -55,7 +58,7 @@ public class SmeltableItem : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered trigger");
+        
         if (other.CompareTag("Furnace"))
         {
             canSmelt = true;
@@ -73,7 +76,6 @@ public class SmeltableItem : MonoBehaviour
         if (other.CompareTag("Furnace") && !isWorkable)
         {
             StopCoroutine(SmeltTimer());
-            Debug.Log("smelting should have stopped");
             canSmelt = false;
         }
         if (other.CompareTag("Furnace") && isWorkable)
