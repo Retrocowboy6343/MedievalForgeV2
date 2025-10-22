@@ -22,7 +22,7 @@ public class SmithableItem : MonoBehaviour
         if (onAnvil && findRecipe.recipeOnAnvil && smeltableItem.isWorkable)
         {
             canSmith = true;
-            Debug.Log("penis");
+            
         }    
     }
     private void Start()
@@ -33,12 +33,12 @@ public class SmithableItem : MonoBehaviour
     //Smithing conditions
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("wiggers");
+        
         //Check if Parent Object is on Anvil
         if (other.gameObject.CompareTag("Anvil"))
         {
             onAnvil = true;
-            Debug.Log("Penis once more");
+            
         }
             
     }

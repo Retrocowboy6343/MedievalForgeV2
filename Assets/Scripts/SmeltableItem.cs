@@ -46,6 +46,7 @@ public class SmeltableItem : MonoBehaviour
     {
         if (canSmelt)
         {
+            //if canSmelt is true, set isWorkable to true and set the meshrenderer's matieral to hotMaterial
             isWorkable = true;
             meshRenderer.material = hotMaterial;
         }
@@ -53,6 +54,7 @@ public class SmeltableItem : MonoBehaviour
     }
     private void OnCooldown()
     {
+        //set isWorkable to false and change meshrenderer's material to coolmaterial
         isWorkable = false;
         meshRenderer.material = coolMaterial;
     }
@@ -61,23 +63,22 @@ public class SmeltableItem : MonoBehaviour
         
         if (other.CompareTag("Furnace"))
         {
+            //if the object has the "Furnace" tag, then start SmeltTimer() couroutine and stop CooldownTimer if its running.
             canSmelt = true;
             StartCoroutine(SmeltTimer());
             StopCoroutine(CooldownTimer());
         }
-        //if (other.gameObject.CompareTag("QBucket"))
-        {
-            //StopAllCoroutines();
-            //OnCooldown();
-        }
+        
     }
     private void OnTriggerExit(Collider other)
     {
+        //if the ingot leaves the furnace prematurely, cancel smelt
         if (other.CompareTag("Furnace") && !isWorkable)
         {
             StopCoroutine(SmeltTimer());
             canSmelt = false;
         }
+        //if ingot leaves furnace after being smelted, start CooldownTimer
         if (other.CompareTag("Furnace") && isWorkable)
         {
             StartCoroutine(CooldownTimer());

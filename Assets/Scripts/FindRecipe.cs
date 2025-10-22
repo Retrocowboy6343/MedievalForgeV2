@@ -23,7 +23,7 @@ public class FindRecipe : MonoBehaviour
             {
                 curentRecipe = other.GetComponent<RecipeItem>().smithingOutput;
                 recipeOnAnvil = true;
-                Debug.Log("penis agin");
+                
             }
         }
     }
